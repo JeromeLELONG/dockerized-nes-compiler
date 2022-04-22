@@ -1,14 +1,12 @@
-#Docker Website
+version: '3.4'
 
-
-#Apache Proxy Container
-nes-build-container:
- build: .
- container_name: nes-build-container
- hostname: nes-build-container
- ports:
-  - "8080:8080"
- # - "443:443"
- #volumes_from:
- # - proxy-data
- restart: always
+services:
+  nes-build-container:
+    build: .
+    container_name: nes-build-container
+    hostname: nes-build-container
+    ports:
+      - "8080:8080"
+    restart: always
+    volumes:
+      - ./src:/src

@@ -6,4 +6,5 @@ RUN git clone https://github.com/cc65/cc65.git
 WORKDIR /cc65_build/cc65
 RUN make
 #CMD ['tail','-f','/var/log/cron.log']
+ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/cc65_build/cc65/bin
 ENTRYPOINT ["tail", "-f", "/dev/null"]
